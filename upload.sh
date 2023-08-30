@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NOTION_PAGE_ID= $(cat ./page.notion)
+NOTION_PAGE_ID=$(cat ./page.notion)
 NOTION_API_KEY=$(cat ./secret.notion)
 
 FILE=$1
@@ -14,8 +14,6 @@ if [[ -f "$FILE" ]]; then
        exit;
     fi
 
-    
-    exit
     DATA=$(jq -n \
               --arg content "$CONTENTS"\
               '{
